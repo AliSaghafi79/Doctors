@@ -135,3 +135,4 @@ g4.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[4]}" alt=
 g5.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[5]}" alt="pretty kitty" />`;
 g6.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[6]}" alt="pretty kitty" />`;
 
+

@@ -4,6 +4,23 @@
   font-family: "Vazirmatn", sans-serif;
 }
 
+
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff375f;
+    border-radius: 10px;
+    height: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d90429;
+  }
+
 .gradient {
   background: linear-gradient(
     270deg,
@@ -176,4 +193,40 @@
     #002a54 100%,
     #1dbfcc 100%
   );
+}
+
+.autoplay-progress {
+  position: relative;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #002a54;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: #002a54;
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #002a54 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #002a54 !important;
 }
