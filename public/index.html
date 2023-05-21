@@ -45,7 +45,11 @@
       <div class="flex flex-row items-center justify-between">
         <div class="flex flex-row gap-3 items-center pr-4">
           <div>
-            <img class="w-16 h-16 r400:w-12 r400:h-12" src="./images/Group56.png" alt="Group">
+            <img
+              class="w-16 h-16 r400:w-12 r400:h-12"
+              src="./images/Group56.png"
+              alt="Group"
+            />
           </div>
           <div>
             <p class="text-[#FF375F] text-lg r400:text-base">پروفسور</p>
@@ -315,7 +319,7 @@
     <!-- SlideShow -->
     <section class="w-full relative">
       <!-- img1 -->
-      <div class="w-full relative h-80 Slideimg">
+      <div class="w-full relative h-80 sm:h-96 Slideimg z-20">
         <img
           class="w-full h-full r400:hidden"
           src="./images/slider.png"
@@ -328,23 +332,23 @@
           class="absolute top-0 w-full h-full gradient flex items-center r400:items-start"
         >
           <div class="w-2/5 mr-6 r400:w-full r400:mt-3">
-            <p class="text-[#FF375F] text-[10px]">
+            <p class="text-[#FF375F] text-[10px] sm:text-xs">
               دکترای رادیولوژی و اینترونشنال
             </p>
-            <h1 class="text-lg font-bold text-[#002A54] mt-1">
+            <h1 class="text-lg font-bold text-[#002A54] mt-1 sm:text-xl">
               دکتر حسین قناعتی
             </h1>
             <p
-              class="text-[#666666] text-[10px] font-normal text-justify leading-4 mt-2 r400:text-black r400:pl-3 r400:w-3/4"
+              class="text-[#666666] text-[10px] font-normal text-justify leading-4 mt-2 r400:text-black r400:pl-3 r400:w-3/4 sm:text-xs"
             >
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
               در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
               نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
             </p>
-            <a
+            <button
               href="#"
-              class="w-32 h-10 bg-[#002A54] flex flex-row-reverse items-center justify-center rounded-lg gap-3 mt-4 btnSlider"
+              class="w-32 h-10 bg-[#002A54] flex flex-row-reverse items-center justify-center rounded-lg gap-3 mt-4 btnSlider hover:shadow-inner"
             >
               <p class="text-white text-xs">مشاوره رایگان</p>
               <span
@@ -412,7 +416,7 @@
                   </defs>
                 </svg>
               </span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -423,7 +427,7 @@
       >
         <!-- Next -->
         <div
-          class="w-8 h-8 rounded-full bg-white flex justify-center items-center mr-3 cursor-pointer slide arrow"
+          class="w-8 h-8 rounded-full bg-white flex justify-center items-center mr-3 cursor-pointer slide arrow z-30"
           onclick="plusSlides(1)"
         >
           <svg
@@ -441,7 +445,7 @@
 
         <!-- Prev -->
         <div
-          class="w-8 h-8 rounded-full bg-white flex justify-center items-center ml-3 cursor-pointer slide arrow"
+          class="w-8 h-8 rounded-full bg-white flex justify-center items-center ml-3 cursor-pointer slide arrow z-30"
           onclick="plusSlides(-1)"
         >
           <svg
@@ -460,178 +464,72 @@
     </section>
 
     <!-- 30 years of experience -->
-    <section class="pt-8 pb-14 px-16 r400:px-8 w-full">
-      <div class="w-full relative">
-        <div>
-          <img
-            class="rounded-lg shadow-2xl"
-            src="./images/hossein.png"
-            alt="hossein"
-          />
-        </div>
+    <section class="pt-8 pb-14 px-16 sm:px-24 sm:pt-16 r400:px-8 w-full">
+      <div class="relative w-full">
+        <img
+          class="rounded-lg shadow-2xl w-full"
+          src="./images/hossein.png"
+          alt="hossein"
+        />
 
         <div
-          class="absolute top-5 left-[-25px] bg-[#1DBFCC] r400:max-w-[4rem] max-w-[6rem] text-white py-3 px-5 rounded-lg r400:px-2"
+          class="absolute top-5 left-[-25px] bg-[#1DBFCC] r300:w-16 r400:w-20 sm:w-36 w-24 text-white py-3 px-5 rounded-lg r400:px-2"
         >
           <div class="flex flex-col gap-2 text-center items-center r400:gap-1">
-            <svg
-              class="w-12 h-12 r400:w-9 r400:h-9"
-              viewBox="0 0 53 60"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.41602 0.163063C0.794922 0.51265 0.830078 -1.10711 0.818359 27.1163C0.818359 47.2175 0.853516 53.4285 0.958984 53.6616C1.26367 54.3375 0.455078 54.3025 16.5215 54.3025H31.2871V56.5166C31.2871 58.2179 31.3223 58.8238 31.4512 59.0685C31.627 59.3948 32.0723 59.6628 32.4707 59.6628C32.5879 59.6628 33.7012 59.1618 34.9199 58.5558L37.1465 57.4488L39.373 58.5558C40.5918 59.1618 41.7051 59.6628 41.834 59.6628C42.2207 59.6628 42.7129 59.3599 42.8652 59.0219C42.9707 58.8005 43.0059 57.274 43.0059 53.3703V48.0099H43.2754C43.8145 48.0099 44.7754 47.6487 45.1855 47.2874C45.7012 46.8446 46.0996 46.0639 46.2871 45.1783C46.4746 44.2577 46.9668 43.7683 47.8926 43.5818C49.123 43.3255 49.9551 42.7661 50.4238 41.8921C50.7402 41.2862 50.7637 40.0393 50.459 39.177C50.1426 38.2681 50.2598 37.8952 51.1387 36.9397C52.0996 35.8909 52.3223 35.4481 52.3223 34.4925C52.3223 33.537 52.0996 33.0942 51.1387 32.0454C50.2598 31.0899 50.1426 30.717 50.459 29.8081C50.7637 28.9458 50.7402 27.6989 50.4238 27.0929C49.9551 26.219 49.123 25.6596 47.8926 25.4033C46.9668 25.2168 46.4746 24.7274 46.2871 23.8068C46.0293 22.5833 45.4668 21.7559 44.5879 21.2898C43.9785 20.9752 42.7246 20.9519 41.8574 21.2548C40.9434 21.5578 40.5332 21.4529 39.6777 20.6372C39.2793 20.276 38.8223 19.8798 38.6465 19.7749L38.3184 19.5768V10.2545C38.3184 3.28605 38.2832 0.86224 38.1777 0.640835C37.8848 -7.62939e-05 37.9316 -7.62939e-05 30.9941 -7.62939e-05C24.0566 -7.62939e-05 24.1035 -7.62939e-05 23.8105 0.640835C23.6348 1.02538 23.6348 1.30505 23.8105 1.68959C24.1035 2.33051 24.1152 2.33051 30.291 2.33051H35.9746V10.942V19.5652L35.5996 19.8215C35.3887 19.9614 34.9199 20.3576 34.5566 20.6955C33.7598 21.4413 33.3262 21.5578 32.4355 21.2548C31.5684 20.9519 30.3145 20.9752 29.7051 21.2898C28.8262 21.7559 28.2637 22.5833 28.0059 23.8068C27.8184 24.7274 27.3262 25.2168 26.4004 25.4033C25.1699 25.6596 24.3379 26.219 23.8691 27.0929C23.5527 27.6989 23.5293 28.9458 23.834 29.8081C24.1504 30.717 24.0332 31.1249 23.2012 31.9755C22.252 32.966 21.9707 33.5487 21.9707 34.4925C21.9707 35.4481 22.1934 35.8909 23.1543 36.9397C24.0332 37.8952 24.1504 38.2681 23.834 39.177C23.5293 40.0393 23.5527 41.2862 23.8691 41.8921C24.3379 42.7661 25.1699 43.3255 26.4004 43.5818C27.3262 43.7683 27.8184 44.2577 28.0059 45.1783C28.1934 46.0639 28.5918 46.8446 29.1074 47.2874C29.5176 47.6487 30.4785 48.0099 31.0176 48.0099H31.2871V49.9909V51.9719H17.2246H3.16211V27.1512V2.33051H8.8457C14.9395 2.33051 14.9863 2.33051 15.3027 1.73621C15.6191 1.13026 15.3965 0.396122 14.8223 0.139759C14.3535 -0.0699959 1.80273 -0.0466881 1.41602 0.163063ZM38.1074 22.3852C39.3613 23.6553 40.6738 24.0049 42.3496 23.5388C43.5801 23.2009 43.7324 23.2708 43.9902 24.3196C44.4707 26.219 45.4668 27.2095 47.4004 27.6872C48.4316 27.9436 48.502 28.0951 48.1621 29.3187C47.6934 30.985 48.0449 32.2901 49.3223 33.537C49.7676 33.9682 50.0371 34.3411 50.0371 34.4925C50.0371 34.644 49.7676 35.0169 49.3223 35.4481C48.0449 36.6949 47.6934 38.0001 48.1621 39.6664C48.502 40.89 48.4316 41.0415 47.377 41.2978C45.4668 41.7756 44.4707 42.7661 43.9902 44.6888C43.7324 45.7143 43.5566 45.8075 42.3965 45.4579C41.4121 45.1783 40.9551 45.155 40.1348 45.3764C39.2559 45.6094 38.8457 45.8541 38.084 46.6232C37.6504 47.066 37.3105 47.3108 37.1348 47.3108C36.9707 47.3108 36.666 47.101 36.3379 46.7514C35.5996 45.994 35.1426 45.691 34.3105 45.4346C33.4082 45.155 32.9746 45.155 31.8965 45.4579C30.7129 45.7842 30.5605 45.7027 30.3027 44.6888C29.8223 42.7661 28.8262 41.7756 26.916 41.2978C25.8613 41.0415 25.791 40.89 26.1309 39.6664C26.5996 38.0001 26.248 36.6949 24.9707 35.4481C24.5254 35.0169 24.2559 34.644 24.2559 34.4925C24.2559 34.3411 24.5254 33.9682 24.9707 33.537C26.248 32.2901 26.5996 30.985 26.1309 29.3187C25.791 28.0951 25.8613 27.9436 26.916 27.6872C28.8262 27.2095 29.8223 26.219 30.3027 24.2962C30.5605 23.2708 30.7129 23.2009 31.9434 23.5388C33.6191 24.0049 34.9316 23.6553 36.1855 22.3852C36.6191 21.9424 36.9941 21.6743 37.1465 21.6743C37.2988 21.6743 37.6738 21.9424 38.1074 22.3852ZM34.6738 48.3945C35.5996 49.2451 36.1504 49.5365 36.9238 49.618C37.8262 49.6996 38.5527 49.385 39.5488 48.4644C40.0293 48.0216 40.4746 47.6603 40.5449 47.6603C40.627 47.6603 40.6621 49.2102 40.6621 52.1467V56.6331L39.4902 56.0504L38.3184 55.4678V54.186C38.3184 52.776 38.2012 52.3914 37.7207 52.1351C37.3105 51.9253 36.9824 51.9253 36.5723 52.1351C36.0918 52.3914 35.9746 52.776 35.9746 54.186V55.4678L34.8027 56.0504L33.6309 56.6331V52.1467C33.6309 49.2451 33.6777 47.6603 33.748 47.6603C33.8066 47.6603 34.2285 47.9983 34.6738 48.3945Z"
-                fill="white"
-              />
-              <path
-                d="M34.2285 26.4987C33.7012 26.79 33.6426 27.0813 33.6309 29.0973V30.9967H31.7559C29.6934 30.9967 29.3418 31.0783 29.084 31.6376C28.8848 32.0571 28.8848 36.928 29.084 37.3475C29.3418 37.9069 29.6934 37.9884 31.7559 37.9884H33.6309V39.8529C33.6309 41.8805 33.7129 42.2184 34.2285 42.4865C34.6973 42.7195 39.5957 42.7195 40.0645 42.4865C40.5801 42.2184 40.6621 41.8805 40.6621 39.8529V37.9884H42.5371C44.5996 37.9884 44.9512 37.9069 45.209 37.3475C45.4199 36.8814 45.4082 32.0221 45.1855 31.591C44.916 31.0783 44.5762 30.9967 42.5371 30.9967H40.6621V29.1322C40.6621 27.1046 40.5801 26.7667 40.0645 26.4987C39.6074 26.2656 34.6504 26.2656 34.2285 26.4987ZM38.3184 30.5306C38.3184 33.3273 38.3184 33.3273 41.1309 33.3273H43.0059V34.4926V35.6579H41.1309C38.3184 35.6579 38.3184 35.6579 38.3184 38.4546V40.319H37.1465H35.9746V38.4546C35.9746 35.6579 35.9746 35.6579 33.1621 35.6579H31.2871V34.4926V33.3273H33.1621C35.9746 33.3273 35.9746 33.3273 35.9746 30.5306V28.6661H37.1465H38.3184V30.5306Z"
-                fill="white"
-              />
-              <path
-                d="M18.9938 0.163002C17.9743 0.722342 18.4079 2.33044 19.568 2.33044C20.1657 2.33044 20.7399 1.75945 20.7399 1.17681C20.7399 0.302837 19.7672 -0.268156 18.9938 0.163002Z"
-                fill="white"
-              />
-              <path
-                d="M10.791 10.1846C10.2403 10.4876 10.0528 11.1635 10.3575 11.7578C10.6153 12.2472 11.002 12.3521 12.5371 12.3521C14.0723 12.3521 14.459 12.2472 14.7168 11.7578C15.0332 11.1518 14.8106 10.4177 14.2364 10.1613C13.8028 9.9632 11.1543 9.98651 10.791 10.1846Z"
-                fill="white"
-              />
-              <path
-                d="M17.8223 10.1846C17.2715 10.4876 17.084 11.1635 17.3887 11.7578C17.6465 12.2472 18.0332 12.3521 19.5684 12.3521C21.1035 12.3521 21.4903 12.2472 21.7481 11.7578C22.0645 11.1518 21.8418 10.4177 21.2676 10.1613C20.834 9.9632 18.1856 9.98651 17.8223 10.1846Z"
-                fill="white"
-              />
-              <path
-                d="M24.8535 10.1846C24.3028 10.4876 24.1153 11.1635 24.42 11.7578C24.6778 12.2472 25.0645 12.3521 26.5996 12.3521C28.1348 12.3521 28.5215 12.2472 28.7793 11.7578C29.0957 11.1518 28.8731 10.4177 28.2989 10.1613C27.8653 9.9632 25.2168 9.98651 24.8535 10.1846Z"
-                fill="white"
-              />
-              <path
-                d="M8.44756 14.8458C7.6624 15.2769 7.68584 16.5121 8.49443 16.8734C8.71709 16.9782 11.471 17.0132 19.5804 17.0132C31.2874 17.0132 30.8421 17.0365 31.1468 16.3723C31.4163 15.778 31.2288 15.1254 30.6897 14.8458C30.221 14.6127 8.88115 14.6127 8.44756 14.8458Z"
-                fill="white"
-              />
-              <path
-                d="M10.7913 21.8374C10.0062 22.2686 10.0296 23.5038 10.8382 23.865C11.0608 23.9699 12.7601 24.0049 17.2249 24.0049C21.6897 24.0049 23.389 23.9699 23.6116 23.865C23.9515 23.7136 24.2561 23.2241 24.2561 22.8396C24.2561 22.455 23.9515 21.9656 23.6116 21.8141C23.1429 21.6044 11.178 21.6277 10.7913 21.8374Z"
-                fill="white"
-              />
-              <path
-                d="M6.10381 26.4987C5.31865 26.9299 5.34209 28.1651 6.15068 28.5263C6.37334 28.6312 8.33037 28.6661 13.7093 28.6661C19.0882 28.6661 21.0452 28.6312 21.2679 28.5263C21.6077 28.3748 21.9124 27.8854 21.9124 27.5008C21.9124 27.1163 21.6077 26.6269 21.2679 26.4754C20.7991 26.2656 6.49053 26.2889 6.10381 26.4987Z"
-                fill="white"
-              />
-              <path
-                d="M6.10381 31.1598C5.31865 31.5909 5.34209 32.8261 6.15068 33.1874C6.58428 33.3855 18.4905 33.3855 18.9241 33.1874C19.264 33.0359 19.5686 32.5465 19.5686 32.1619C19.5686 31.7774 19.264 31.2879 18.9241 31.1364C18.4554 30.9267 6.49053 30.95 6.10381 31.1598Z"
-                fill="white"
-              />
-              <path
-                d="M6.10381 35.821C5.31865 36.2522 5.34209 37.4874 6.15068 37.8486C6.58428 38.0467 18.4905 38.0467 18.9241 37.8486C19.264 37.6971 19.5686 37.2077 19.5686 36.8232C19.5686 36.4386 19.264 35.9492 18.9241 35.7977C18.4554 35.588 6.49053 35.6113 6.10381 35.821Z"
-                fill="white"
-              />
-              <path
-                d="M13.0646 42.871C12.8771 42.9876 12.2911 43.512 11.7755 44.0363L10.838 44.9802H9.80675C8.72862 44.9802 8.17784 45.1434 8.03722 45.5163C7.97862 45.6794 7.92003 45.6561 7.60362 45.3997C7.40441 45.2366 7.12316 45.0618 6.95909 45.0268C6.10362 44.8171 5.34191 45.5978 5.56456 46.4601C5.64659 46.8214 7.95519 49.2102 8.45909 49.4782C8.84581 49.6763 9.1505 49.688 9.54894 49.5015C9.99425 49.3035 10.1935 48.8257 10.1935 48.01V47.3108H10.9083C11.6466 47.3108 11.9513 47.2059 12.3849 46.8097C12.6192 46.6 12.6544 46.6 12.7247 46.7748C12.9005 47.2409 13.3458 47.3108 16.0528 47.3108C18.8653 47.3108 19.1583 47.2525 19.4278 46.6699C19.6974 46.0756 19.5099 45.423 18.9708 45.1434C18.7247 45.0268 18.1622 44.9802 16.756 44.9802H14.881V44.281C14.881 43.4537 14.7052 43.0342 14.2833 42.8128C13.838 42.5914 13.4864 42.603 13.0646 42.871Z"
-                fill="white"
-              />
-            </svg>
-            <p class="font-bold text-2xl r400:text-xl">۳۰</p>
-            <p class="text-xs r400:text-[10px] font-bold">سال تجربه</p>
+            <img
+              class="w-12 h-12 r400:w-9 r400:h-9 sm:w-14 sm:h-14"
+              src="./images/Group43.png"
+              alt="images"
+            />
+            <p class="font-bold text-2xl r400:text-xl sm:text-4xl">۳۰</p>
+            <p class="text-xs r400:text-[10px] font-bold sm:text-xl">
+              سال تجربه
+            </p>
           </div>
         </div>
       </div>
 
       <div class="flex flex-col gap-1 mt-8">
-        <h6 class="text-[#FF375F] text-sm font-normal leading-7">پروفسور</h6>
-        <h3 class="text-[#002A54] text-lg font-bold leading-7">
+        <h6 class="text-[#FF375F] text-sm font-normal leading-7 sm:text-base">
+          پروفسور
+        </h6>
+        <h3 class="text-[#002A54] text-lg font-bold leading-7 sm:text-xl">
           دکتر حسین قناعتی
         </h3>
-        <p class="text-[#666666] text-xs font-normal leading-6 text-justify">
+        <p
+          class="text-[#666666] text-xs font-normal leading-6 text-justify sm:text-sm sm:leading-7"
+        >
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
           سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
           متنوع با هدف بهبود ابزارهای کاربردی می باشد.
         </p>
-        <div class="text-[10px]">
+        <div class="text-[10px] sm:text-xs">
           <span class="flex flex-row gap-2 my-2">
-            <svg
+            <img
               class="w-3 h-3 r400:absolute"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="20"
-                height="20"
-                rx="10"
-                fill="#1DBFCC"
-                fill-opacity="0.3"
-              />
-              <g clip-path="url(#clip0_362_43)">
-                <path
-                  d="M15.8091 5.02476C15.7646 5.0396 15.6805 5.0866 15.6186 5.13113C15.5518 5.17566 14.0181 6.90973 11.9501 9.27708C8.57349 13.1385 8.39291 13.3414 8.35581 13.2944C8.33354 13.2697 7.58401 12.4682 6.691 11.5133C4.88766 9.59124 4.97918 9.67534 4.66255 9.67534C4.17028 9.67534 3.85117 10.1998 4.07875 10.6351C4.11091 10.697 4.94703 11.6073 6.07009 12.8021C8.15296 15.0235 8.09359 14.9666 8.36818 14.9889C8.55865 15.0037 8.72439 14.9394 8.88518 14.786C9.10287 14.5807 16.5413 6.05877 16.5933 5.95982C16.8035 5.54671 16.5067 5.03713 16.0392 5.00992C15.9551 5.00497 15.8512 5.01239 15.8091 5.02476Z"
-                  fill="#1DBFCC"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_362_43">
-                  <rect x="4" y="5" width="12.6716" height="10" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+              src="./images/Group 961.png"
+              alt="icons"
+            />
 
             <p class="r400:mr-5">ریاست دانشگاه علوم پزشكی تهران از سال 1400</p>
           </span>
           <span class="flex flex-row gap-2 my-2">
-            <svg
+            <img
               class="w-3 h-3 r400:absolute"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="20"
-                height="20"
-                rx="10"
-                fill="#1DBFCC"
-                fill-opacity="0.3"
-              />
-              <g clip-path="url(#clip0_362_43)">
-                <path
-                  d="M15.8091 5.02476C15.7646 5.0396 15.6805 5.0866 15.6186 5.13113C15.5518 5.17566 14.0181 6.90973 11.9501 9.27708C8.57349 13.1385 8.39291 13.3414 8.35581 13.2944C8.33354 13.2697 7.58401 12.4682 6.691 11.5133C4.88766 9.59124 4.97918 9.67534 4.66255 9.67534C4.17028 9.67534 3.85117 10.1998 4.07875 10.6351C4.11091 10.697 4.94703 11.6073 6.07009 12.8021C8.15296 15.0235 8.09359 14.9666 8.36818 14.9889C8.55865 15.0037 8.72439 14.9394 8.88518 14.786C9.10287 14.5807 16.5413 6.05877 16.5933 5.95982C16.8035 5.54671 16.5067 5.03713 16.0392 5.00992C15.9551 5.00497 15.8512 5.01239 15.8091 5.02476Z"
-                  fill="#1DBFCC"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_362_43">
-                  <rect x="4" y="5" width="12.6716" height="10" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+              src="./images/Group 961.png"
+              alt="icons"
+            />
 
             <p class="r400:mr-5">دکترای رادیولوژی و اینترونشنال</p>
           </span>
 
           <span class="flex flex-row gap-2 my-2">
-            <svg
+            <img
               class="w-3 h-3 r400:absolute"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="20"
-                height="20"
-                rx="10"
-                fill="#1DBFCC"
-                fill-opacity="0.3"
-              />
-              <g clip-path="url(#clip0_362_43)">
-                <path
-                  d="M15.8091 5.02476C15.7646 5.0396 15.6805 5.0866 15.6186 5.13113C15.5518 5.17566 14.0181 6.90973 11.9501 9.27708C8.57349 13.1385 8.39291 13.3414 8.35581 13.2944C8.33354 13.2697 7.58401 12.4682 6.691 11.5133C4.88766 9.59124 4.97918 9.67534 4.66255 9.67534C4.17028 9.67534 3.85117 10.1998 4.07875 10.6351C4.11091 10.697 4.94703 11.6073 6.07009 12.8021C8.15296 15.0235 8.09359 14.9666 8.36818 14.9889C8.55865 15.0037 8.72439 14.9394 8.88518 14.786C9.10287 14.5807 16.5413 6.05877 16.5933 5.95982C16.8035 5.54671 16.5067 5.03713 16.0392 5.00992C15.9551 5.00497 15.8512 5.01239 15.8091 5.02476Z"
-                  fill="#1DBFCC"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_362_43">
-                  <rect x="4" y="5" width="12.6716" height="10" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+              src="./images/Group 961.png"
+              alt="icons"
+            />
 
             <p class="r400:mr-5">
               کسب تخصص MRI و CT-Scan و اینترونشن از انگلستان
@@ -639,31 +537,11 @@
           </span>
 
           <span class="flex flex-row gap-2 my-2">
-            <svg
+            <img
               class="w-3 h-3 r400:absolute"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="20"
-                height="20"
-                rx="10"
-                fill="#1DBFCC"
-                fill-opacity="0.3"
-              />
-              <g clip-path="url(#clip0_362_43)">
-                <path
-                  d="M15.8091 5.02476C15.7646 5.0396 15.6805 5.0866 15.6186 5.13113C15.5518 5.17566 14.0181 6.90973 11.9501 9.27708C8.57349 13.1385 8.39291 13.3414 8.35581 13.2944C8.33354 13.2697 7.58401 12.4682 6.691 11.5133C4.88766 9.59124 4.97918 9.67534 4.66255 9.67534C4.17028 9.67534 3.85117 10.1998 4.07875 10.6351C4.11091 10.697 4.94703 11.6073 6.07009 12.8021C8.15296 15.0235 8.09359 14.9666 8.36818 14.9889C8.55865 15.0037 8.72439 14.9394 8.88518 14.786C9.10287 14.5807 16.5413 6.05877 16.5933 5.95982C16.8035 5.54671 16.5067 5.03713 16.0392 5.00992C15.9551 5.00497 15.8512 5.01239 15.8091 5.02476Z"
-                  fill="#1DBFCC"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_362_43">
-                  <rect x="4" y="5" width="12.6716" height="10" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+              src="./images/Group 961.png"
+              alt="icons"
+            />
 
             <p class="r400:mr-5">فلوشيپ نورواينترونشن</p>
           </span>
@@ -678,14 +556,18 @@
 
     <!-- medical services -->
     <section
-      class="bg-[url(./images/Service.png)] bg-no-repeat bg-cover bg-[center_center] flex flex-col items-center px-6 r400:px-2 pb-10"
+      class="bg-[url(./images/Service.png)] bg-no-repeat bg-cover bg-[center_center] flex flex-col items-center px-6 r400:px-2 pb-10 sm:px-16"
     >
+      <!-- Title -->
       <div class="bg-[#1DBFCC] w-1 h-10 rounded-b-2xl"></div>
       <div class="flex flex-col gap-2 text-center mt-4">
         <p class="text-[#FF375F] text-xs font-normal">بهترین خدمات پزشکی</p>
         <p class="text-[#002A54] text-xl font-bold">خدمات پزشکی قابل ارائه</p>
       </div>
+
+      <!-- medicalServices Box -->
       <div class="w-full mt-8 grid grid-cols-1 gap-5">
+        <!-- medicalServices-1 -->
         <div
           class="py-16 r400:pt-4 w-full bg-white boxshodow rounded-xl flex flex-col gap-8 r400:gap-4 items-center justify-center px-14 r400:px-3 relative hoverbox"
         >
@@ -719,6 +601,7 @@
           </div>
         </div>
 
+        <!-- medicalServices-2 -->
         <div
           class="py-16 r400:pt-4 w-full bg-white boxshodow rounded-xl flex flex-col gap-8 r400:gap-4 items-center justify-center px-14 r400:px-3 relative hoverbox"
         >
@@ -752,6 +635,7 @@
           </div>
         </div>
 
+        <!-- medicalServices-3 -->
         <div
           class="py-16 r400:pt-4 w-full bg-white boxshodow rounded-xl flex flex-col gap-8 r400:gap-4 items-center justify-center px-14 r400:px-3 relative hoverbox"
         >
@@ -785,16 +669,19 @@
           </div>
         </div>
       </div>
-      <a
+
+      <!-- medicalServices Button -->
+      <button
         class="bg-[#002A54] rounded-xl flex flex-col justify-center items-center w-1/2 h-10 mt-6 text-white font-bold text-sm r400:text-xs r400:w-3/4"
         href="#"
       >
         <p>مشاهده همه خدمات</p>
-      </a>
+      </button>
     </section>
 
     <!-- Gallery -->
     <section class="pb-12">
+      <!-- Gallery Title -->
       <div class="w-full flex flex-col justify-center items-center gap-6">
         <div class="w-1 h-10 bg-[#1DBFCC] rounded-b-2xl"></div>
         <div class="text-center flex flex-col gap-2">
@@ -802,16 +689,18 @@
           <p class="text-[#002A54] text-lg font-bold">گالری تصاویر</p>
         </div>
       </div>
-      <div class="w-full flex px-20 r400:px-6 py-8">
-        <div class="w-full md:h-[600px] h-auto flex md:flex-row gap-2 flex-col">
-          <div class="md:w-1/2 h-full flex flex-col gap-2 w-full">
+
+      <!-- Galley Box -->
+      <div class="w-full flex px-20 sm:px-12 r400:px-6 py-8">
+        <div class="w-full sm:h-[450px] h-auto flex sm:flex-row gap-2 flex-col">
+          <div class="sm:w-1/2 h-full flex flex-col gap-2 w-full">
             <div class="w-full h-3/4 relative" id="g1"></div>
             <div class="w-full h-1/4 flex flex-row gap-2">
               <div class="w-1/2 h-full" id="g2"></div>
               <div class="w-1/2 h-full" id="g3"></div>
             </div>
           </div>
-          <div class="md:w-1/2 h-full flex flex-col gap-2 w-full">
+          <div class="sm:w-1/2 h-full flex flex-col gap-2 sm:gap-3 w-full">
             <div class="w-full h-3/4 flex flex-col gap-2">
               <div class="w-full h-3/5" id="g4"></div>
               <div class="w-full h-2/5 flex flex-row gap-2">
@@ -823,23 +712,24 @@
           </div>
         </div>
       </div>
-
+      <!-- Gallery button -->
       <div class="w-full flex items-center justify-center">
-        <a
+        <button
           class="bg-[#002A54] rounded-xl flex flex-col justify-center items-center w-1/2 h-10 mt-6 text-white font-bold text-sm r400:text-xs r400:w-3/4"
           href="#"
         >
           <p>آرشیو گالری تصاویر</p>
-        </a>
+        </button>
       </div>
     </section>
+
     <!-- Sevice -->
     <section class="w-full">
       <div
-        class="relative w-full flex flex-col items-center gap-6 px-8 pb-8 r400:px-3"
+        class="relative w-full flex flex-col items-center gap-6 px-8 pb-8 r400:px-3 sm:px-12"
       >
         <img
-          class="h-full absolute top-0 z-10 hidden"
+          class="h-full absolute top-0 z-10 hidden sm:block"
           src="./images/hospital.png"
           alt=""
         />
@@ -848,6 +738,8 @@
         ></div>
 
         <div class="w-1 h-10 rounded-b-2xl bg-white z-40"></div>
+
+        <!-- Service Title -->
         <div class="text-white flex flex-col text-center gap-4 z-40">
           <p class="text-xs">ارائه خدمات با کیفیت</p>
           <h2 class="text-[#002A54] text-xl font-bold r400:text-lg">
@@ -860,10 +752,11 @@
             کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
           </p>
         </div>
-
+        <!-- Service Box -->
         <div
           class="w-full z-40 flex flex-col items-center justify-center gap-3"
         >
+          <!-- Service-1 -->
           <div
             class="w-3/4 r400:w-full r400:py-5 bg-[#FFFFFF26] flex flex-col justify-center items-center gap-8 py-12 rounded-xl"
           >
@@ -878,6 +771,7 @@
             </div>
           </div>
 
+          <!-- Service-2 -->
           <div
             class="w-3/4 r400:w-full r400:py-5 bg-[#FFFFFF26] flex flex-col justify-center items-center gap-8 py-12 rounded-xl"
           >
@@ -892,6 +786,7 @@
             </div>
           </div>
 
+          <!-- Service-3 -->
           <div
             class="w-3/4 r400:w-full r400:py-5 bg-[#FFFFFF26] flex flex-col justify-center items-center gap-8 py-12 rounded-xl"
           >
@@ -906,6 +801,7 @@
             </div>
           </div>
 
+          <!-- Service-4 -->
           <div
             class="w-3/4 r400:w-full r400:py-5 bg-[#FFFFFF26] flex flex-col justify-center items-center gap-8 py-12 rounded-xl"
           >
@@ -920,6 +816,7 @@
             </div>
           </div>
 
+          <!-- Service-5 -->
           <div
             class="w-3/4 r400:w-full r400:py-5 bg-[#FFFFFF26] flex flex-col justify-center items-center gap-8 py-12 rounded-xl"
           >
@@ -939,8 +836,8 @@
     </section>
 
     <!-- News -->
-    <section class="w-full px-4 pb-12 flex flex-col gap-8">
-
+    <section class="w-full px-4 sm:px-16 pb-12 flex flex-col gap-8">
+      <!-- News Title -->
       <div class="w-full flex flex-col justify-center items-center gap-6">
         <div class="w-1 h-10 bg-[#002A54] rounded-b-2xl"></div>
         <div class="text-center flex flex-col gap-2">
@@ -949,7 +846,7 @@
         </div>
       </div>
 
-      <!-- Swiper -->
+      <!-- News Swiper -->
       <div
         class="swiper w-full rounded-lg flex flex-col bg-white shadow-[0px_10px_30px_0px_#002A540D]"
         id="mySwiper"
@@ -1043,7 +940,9 @@
           </div>
         </div>
         <!-- swiper-pagination &&  autoplay-progress -->
-        <div class="w-full py-4 px-4 flex flex-row items-center border-t border-solid border-[#0000001A] mt-4">
+        <div
+          class="w-full py-4 px-4 flex flex-row items-center border-t border-solid border-[#0000001A] mt-4"
+        >
           <div id="swiper-pagination" class="stroke-red-600"></div>
           <div class="autoplay-progress">
             <svg id="progressCircle" viewBox="0 0 48 48">
@@ -1054,16 +953,15 @@
         </div>
       </div>
 
-
+      <!-- News Button-->
       <div class="w-full flex items-center justify-center">
-        <a
+        <button
           class="bg-[#002A54] rounded-xl flex flex-col justify-center items-center w-1/2 h-10 mt-6 text-white font-bold text-sm r400:text-xs r400:w-3/4"
           href="#"
         >
           <p>مشاهده همه اخبار و مقالات</p>
-        </a>
+        </button>
       </div>
-
     </section>
 
     <!-- نماد تاییدیه اعتبار -->
