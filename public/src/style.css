@@ -4,22 +4,19 @@
   font-family: "Vazirmatn", sans-serif;
 }
 
+/* ::-webkit-scrollbar {
+  width: 4px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #ff375f;
+  border-radius: 10px;
+  height: 100px;
+}
 
-  ::-webkit-scrollbar {
-    width: 4px;
-    
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #ff375f;
-    border-radius: 10px;
-    height: 100px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #d90429;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #d90429;
+} */
 
 .gradient {
   background: linear-gradient(
@@ -135,7 +132,10 @@
 /* When you mouse over the navigation links, change their color */
 
 .sidenav a:hover,
-.sidenav a:hover svg path {
+.sidenav a:hover svg path,
+.HO:hover,
+.HO:hover svg path {
+  transition: all 0.7s;
   color: #ff375f;
   fill: #ff375f;
 }
