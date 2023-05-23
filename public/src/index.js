@@ -118,7 +118,7 @@ const g4 = document.getElementById('g5');
 const g5 = document.getElementById('g6');
 const g6 = document.getElementById('g7');
 
-g0.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[0]}" alt="pretty kitty" />
+g0.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[0]}" alt="pretty kitty" />
                 <div class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg">
                   <div class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9" >
                         <img class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4" src="./images/Icons.png" alt="icons" />
@@ -128,9 +128,9 @@ g0.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[0]}" alt=
                     <p class="mb-4 r300:mb-1">برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران</p>
                 </div>
 `;
-g1.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[1]}" alt="pretty kitty" />`;
-g2.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[2]}" alt="pretty kitty" />`;
-g3.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[3]}" alt="pretty kitty" />`;
-g4.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[4]}" alt="pretty kitty" />`;
-g5.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[5]}" alt="pretty kitty" />`;
-g6.innerHTML = `<img class="w-full h-full rounded-lg" src="./img/${arr[6]}" alt="pretty kitty" />`;
+g1.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[1]}" alt="pretty kitty" />`;
+g2.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[2]}" alt="pretty kitty" />`;
+g3.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[3]}" alt="pretty kitty" />`;
+g4.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[4]}" alt="pretty kitty" />`;
+g5.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[5]}" alt="pretty kitty" />`;
+g6.innerHTML = `<img class="w-full h-full rounded-lg" src="./images/img/${arr[6]}" alt="pretty kitty" />`;
