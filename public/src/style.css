@@ -4,19 +4,25 @@
   font-family: "Vazirmatn", sans-serif;
 }
 
-/* ::-webkit-scrollbar {
-  width: 4px;
+body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #ff375f;
   border-radius: 10px;
-  height: 100px;
+  height: 200px;
+  
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #d90429;
-} */
+}
 
 .gradient {
   background: linear-gradient(
@@ -110,7 +116,7 @@
   top: 0;
   /* Stay at the top */
   left: 0;
-  background-color: #01162a;
+  background-color:  #F5F5F5;
   /* Black*/
   overflow-x: hidden;
   /* Disable horizontal scroll */
@@ -122,10 +128,10 @@
 
 /* The navigation menu links */
 
-.sidenav a {
+.sidenav .dropdown-btn , .closebtn {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  color: white;
+  color: #002a54;
   transition: 0.6s;
 }
 
@@ -164,7 +170,6 @@
 .dropdown-container {
   display: none;
   height: auto;
-  background-color: white;
   padding-left: 8px;
   overflow-x: hidden;
 }
@@ -229,4 +234,12 @@
 
 .swiper-pagination-bullet {
   background-color: #002a54 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+
+
+#g1:hover > div , #g2:hover > div {
+  display: block
 }

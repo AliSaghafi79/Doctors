@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/style.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Font Vazir -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -91,21 +95,60 @@
           <div
             class="flex flex-row-reverse items-center gap-2 border-l border-solid border-[#0000001A] pl-4"
           >
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.8534 11.1465L8.44091 7.73405C9.10191 6.91756 9.4999 5.88006 9.4999 4.75008C9.4999 2.13111 7.36891 0.00012207 4.74994 0.00012207C2.13096 0.00012207 0 2.13109 0 4.75006C0 7.36903 2.13099 9.50002 4.74996 9.50002C5.87994 9.50002 6.91744 9.10203 7.73392 8.44103L11.1464 11.8535C11.2439 11.951 11.3719 12 11.4999 12C11.6279 12 11.7559 11.951 11.8534 11.8535C12.0489 11.658 12.0489 11.342 11.8534 11.1465ZM4.74996 8.50002C2.68197 8.50002 0.999998 6.81805 0.999998 4.75006C0.999998 2.68207 2.68197 1.0001 4.74996 1.0001C6.81795 1.0001 8.49992 2.68207 8.49992 4.75006C8.49992 6.81805 6.81792 8.50002 4.74996 8.50002Z"
-                fill="#002A54"
-              />
-            </svg>
             <img src="./images/1234.png" alt="icons" />
-            <p class="text-[#002A54] text-xs">English</p>
-            <img src="./images/down-arrow 1.png" alt="dropdown" />
+            <!-- English vs فارسی -->
+            <script
+              src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+              defer
+            ></script>
+            <div class="flex justify-center">
+              <div x-data="{ dropdownOpen: false }" class="relative">
+                <button
+                  @click="dropdownOpen = !dropdownOpen"
+                  class="flex flex-row-reverse items-center gap-1 p-2 focus:outline-none"
+                >
+                  <p class="text-[#002A54] text-xs">فارسی</p>
+                  <svg
+                    x-show="!dropdownOpen"
+                    class="h-4 w-4 text-gray-800"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#002A54"
+                  >
+                    <path
+                      fill-rule="#002A54"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="#002A54"
+                    />
+                  </svg>
+                  <svg
+                    x-show="dropdownOpen"
+                    class="h-4 w-4 text-gray-800 rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#002A54"
+                  >
+                    <path
+                      fill-rule="#002A54"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="#002A54"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  x-show="dropdownOpen"
+                  class="absolute right-0 w-20 mt-1 bg-white rounded-md shadow-xl z-20"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-[#002A54] text-xs capitalize hover:bg-[#FF375F] hover:text-white text-center hover:rounded-md"
+                  >
+                    English
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="flex flex-row justify-center gap-1">
@@ -235,171 +278,1085 @@
 
         <div class="hidden xl:flex flex-row gap-4 text-sm">
           <!-- خدمات پزشکی -->
-          <div>
-            <a href="#" class="w-full flex flex-row items-center gap-2 HO">
-              <p>خدمات پزشکی</p>
-              <svg
-                class="w-3 h-2"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                  fill="#000000"
-                />
-                <path
-                  d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                  fill="#000000"
-                />
-              </svg>
-            </a>
-            <div
-              class="dropdown-container text-sm text-justify text-[#003366] justify-center"
-            >
-              <p class="w-4/5">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-              </p>
-            </div>
-          </div>
+          <div class="group inline-block">
+            <button class="flex items-center">
+              <span class="font-medium">خدمات پزشکی</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
 
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50 flex flex-col mt-2"
+            >
+              <li
+                class="rounded-sm px-3 py-1 hover:bg-gray-100 flex flex-row justify-between"
+              >
+                Test1
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test2</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-1</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-2</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-3</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-4</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-2</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-3</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-3-1</li>
+                    </ul>
+                  </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-4</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-5</li>
+                </ul>
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test3</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Test3-1</li>
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test3-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
           <!-- مصاحبه‌ها و اخبار -->
-          <div>
-            <a href="#" class="w-full flex flex-row items-center gap-2 HO">
-              <p>مصاحبه‌ها و اخبار</p>
-              <svg
-                class="w-3 h-2"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                  fill="#000000"
-                />
-                <path
-                  d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                  fill="#000000"
-                />
-              </svg>
-            </a>
-            <div
-              class="dropdown-container text-sm text-justify text-[#003366] justify-center"
-            >
-              <p class="w-4/5"></p>
-            </div>
-          </div>
+          <div class="group inline-block">
+            <button class="flex items-center">
+              <span class="font-medium">مصاحبه‌ها و اخبار</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
 
-          <!-- تالیفات -->
-          <div>
-            <a href="#" class="w-full flex flex-row items-center gap-2 HO">
-              <p>تالیفات</p>
-              <svg
-                class="w-3 h-2"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                  fill="#000000"
-                />
-                <path
-                  d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                  fill="#000000"
-                />
-              </svg>
-            </a>
-            <div
-              class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50 flex flex-col mt-2"
             >
-              <p class="w-4/5"></p>
-            </div>
+              <li
+                class="rounded-sm px-3 py-1 hover:bg-gray-100 flex flex-row justify-between"
+              >
+                Test1
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test2</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-1</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-2</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-3</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-4</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-2</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-3</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-3-1</li>
+                    </ul>
+                  </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-4</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-5</li>
+                </ul>
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test3</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Test3-1</li>
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test3-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- تالیفات -->
+          <div class="group inline-block">
+            <button class="flex items-center">
+              <span class="font-medium">تالیفات</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
+
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50 flex flex-col mt-2"
+            >
+              <li
+                class="rounded-sm px-3 py-1 hover:bg-gray-100 flex flex-row justify-between"
+              >
+                Test1
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test2</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-1</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-2</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-3</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-4</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-2</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-3</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-3-1</li>
+                    </ul>
+                  </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-4</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-5</li>
+                </ul>
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test3</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Test3-1</li>
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test3-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
 
           <!-- مشاوره رایگان -->
-          <div>
-            <a href="#" class="w-full flex flex-row items-center gap-2 HO">
-              <p>مشاوره رایگان</p>
-              <svg
-                class="w-3 h-2"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                  fill="#000000"
-                />
-                <path
-                  d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                  fill="#000000"
-                />
-              </svg>
-            </a>
-            <div
-              class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+          <div class="group inline-block">
+            <button class="flex items-center">
+              <span class="font-medium">مشاوره رایگان</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
+
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50 flex flex-col mt-2"
             >
-              <p class="w-4/5"></p>
-            </div>
+              <li
+                class="rounded-sm px-3 py-1 hover:bg-gray-100 flex flex-row justify-between"
+              >
+                Test1
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test2</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-1</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-2</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-3</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-4</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-2</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-3</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-3-1</li>
+                    </ul>
+                  </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-4</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-5</li>
+                </ul>
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test3</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Test3-1</li>
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test3-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
 
           <!-- چندرسانه‌ای -->
-          <div>
-            <a href="#" class="w-full flex flex-row items-center gap-2 HO">
-              <p>چندرسانه‌ای</p>
-              <svg
-                class="w-3 h-2"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                  fill="#000000"
-                />
-                <path
-                  d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                  fill="#000000"
-                />
-              </svg>
-            </a>
-            <div
-              class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+          <div class="group inline-block">
+            <button class="flex items-center">
+              <span class="font-medium">چندرسانه‌ای</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
+
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50 flex flex-col mt-2"
             >
-              <p class="w-4/5"></p>
-            </div>
+              <li
+                class="rounded-sm px-3 py-1 hover:bg-gray-100 flex flex-row justify-between"
+              >
+                Test1
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test2</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-1</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-2</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-3</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-4</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-2</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-3</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-3-1</li>
+                    </ul>
+                  </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-4</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-5</li>
+                </ul>
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test3</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Test3-1</li>
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test3-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
 
           <!-- ارتباط با ما -->
-          <div>
-            <a href="#" class="w-full flex flex-row items-center gap-2 HO">
-              <p>ارتباط با ما</p>
-              <svg
-                class="w-3 h-2"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                  fill="#000000"
-                />
-                <path
-                  d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                  fill="#000000"
-                />
-              </svg>
-            </a>
-            <div
-              class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+          <div class="group inline-block">
+            <button class="flex items-center">
+              <span class="font-medium">ارتباط با ما</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
+
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50 flex flex-col mt-2"
             >
-              <p class="w-4/5"></p>
-            </div>
+              <li
+                class="rounded-sm px-3 py-1 hover:bg-gray-100 flex flex-row justify-between"
+              >
+                Test1
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test2</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-1</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-2</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-3</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-1-4</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-1</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-2-2</li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test2-3</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">Test2-3-1</li>
+                    </ul>
+                  </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-4</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Test2-5</li>
+                </ul>
+              </li>
+
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                >
+                  <span>Test3</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Test3-1</li>
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full flex flex-row justify-between items-center gap-4 outline-none focus:outline-none"
+                    >
+                      <span>Test3-2</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                      <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
+
+          <style>
+            li > ul {
+              transform: translatex(100%) scale(0);
+            }
+            li:hover > ul {
+              transform: translatex(-101%) scale(1);
+            }
+            li > button svg {
+              transform: rotate(-90deg);
+            }
+            li:hover > button svg {
+              transform: rotate(-270deg);
+            }
+            .group:hover .group-hover\:scale-100 {
+              transform: scale(1);
+            }
+            .group:hover .group-hover\:-rotate-180 {
+              transform: rotate(180deg);
+            }
+            .scale-0 {
+              transform: scale(0);
+            }
+            .min-w-32 {
+              min-width: 8rem;
+            }
+          </style>
         </div>
 
         <!-- Button in xl -->
@@ -409,7 +1366,7 @@
         >
           <a
             href="#"
-            class="flex flex-row-reverse items-center justify-between gap-4 bg-[#D90429] rounded-lg btnhover px-3"
+            class="flex flex-row-reverse items-center justify-between gap-4 bg-[#D90429] rounded-lg btnhover px-3 border-2 border-solid border-[#d90429]"
           >
             <p class="text-base my-2">رزرو نوبت از مطب</p>
             <div
@@ -468,204 +1425,807 @@
     <section class="xl:hidden">
       <div
         id="mySidenav"
-        class="sidenav flex flex-col items-end font-bold text-lg gap-7"
+        class="sidenav flex flex-col items-center font-bold text-sm md:text-base gap-7"
       >
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
           >&times;</a
         >
 
         <!-- خدمات پزشکی -->
-        <div class="w-full">
+        <div class="min-w-[10rem]">
+          <!-- head -->
           <a
             href="#"
-            class="dropdown-btn w-full flex flex-row-reverse items-center justify-between"
+            class="dropdown-btn w-full flex flex-row-reverse items-center justify-around gap-8"
           >
             <p>خدمات پزشکی</p>
             <svg
-              class="w-4 h-4 mr-6"
+              class="w-3 h-3 mr-6"
               viewBox="0 0 14 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                fill="white"
+                fill="#002a54"
               />
               <path
                 d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                fill="white"
+                fill="#002a54"
               />
             </svg>
           </a>
+          <!-- Sub -->
           <div
-            class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center"
           >
-            <p class="w-4/5">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-              در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-              نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-            </p>
+            <div
+              class="flex flex-col items-center justify-center min-w-[13rem] gap-3 bg-white shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#002a54] rounded-md border"
+            >
+              <!-- Sub1 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test1</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test1-1</a>
+                </div>
+              </div>
+              <!-- Sub2 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test2</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test2-1</a>
+
+                  <div class=" w-full">
+                    <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                      <p>Test2-2</p>
+                    <svg
+                      class="w-3 h-3"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                        fill="#002a54"
+                      />
+                      <path
+                        d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                        fill="#002a54"
+                      />
+                    </svg>
+                    </a>
+                    <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                      <a href="">Test2-2-1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub3 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test3</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test3-1</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- مصاحبه‌ها و اخبار -->
-        <div class="w-full">
+        <!-- مصاحبه‌ها و اخبار-->
+        <div class="min-w-[10rem]">
+          <!-- head -->
           <a
             href="#"
-            class="dropdown-btn w-full flex flex-row-reverse items-center justify-between"
+            class="dropdown-btn w-full flex flex-row-reverse items-center justify-around gap-8"
           >
             <p>مصاحبه‌ها و اخبار</p>
             <svg
-              class="w-4 h-4 mr-6"
+              class="w-3 h-3 mr-6"
               viewBox="0 0 14 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                fill="white"
+                fill="#002a54"
               />
               <path
                 d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                fill="white"
+                fill="#002a54"
               />
             </svg>
           </a>
+          <!-- Sub -->
           <div
-            class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center"
           >
-            <p class="w-4/5"></p>
+            <div
+              class="flex flex-col items-center justify-center min-w-[13rem] gap-3 bg-white shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#002a54] rounded-md border"
+            >
+              <!-- Sub1 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test1</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test1-1</a>
+                </div>
+              </div>
+              <!-- Sub2 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test2</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test2-1</a>
+
+                  <div class=" w-full">
+                    <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                      <p>Test2-2</p>
+                    <svg
+                      class="w-3 h-3"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                        fill="#002a54"
+                      />
+                      <path
+                        d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                        fill="#002a54"
+                      />
+                    </svg>
+                    </a>
+                    <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                      <a href="">Test2-2-1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub3 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test3</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test3-1</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- تالیفات -->
-        <div class="w-full">
+        <div class="min-w-[10rem]">
+          <!-- head -->
           <a
             href="#"
-            class="dropdown-btn w-full flex flex-row-reverse items-center justify-between"
+            class="dropdown-btn w-full flex flex-row-reverse items-center justify-around gap-8"
           >
             <p>تالیفات</p>
             <svg
-              class="w-4 h-4 mr-6"
+              class="w-3 h-3 mr-6"
               viewBox="0 0 14 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                fill="white"
+                fill="#002a54"
               />
               <path
                 d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                fill="white"
+                fill="#002a54"
               />
             </svg>
           </a>
+          <!-- Sub -->
           <div
-            class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center"
           >
-            <p class="w-4/5"></p>
+            <div
+              class="flex flex-col items-center justify-center min-w-[13rem] gap-3 bg-white shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#002a54] rounded-md border"
+            >
+              <!-- Sub1 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test1</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test1-1</a>
+                </div>
+              </div>
+              <!-- Sub2 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test2</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test2-1</a>
+
+                  <div class=" w-full">
+                    <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                      <p>Test2-2</p>
+                    <svg
+                      class="w-3 h-3"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                        fill="#002a54"
+                      />
+                      <path
+                        d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                        fill="#002a54"
+                      />
+                    </svg>
+                    </a>
+                    <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                      <a href="">Test2-2-1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub3 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test3</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test3-1</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+
         <!-- مشاوره رایگان -->
-        <div class="w-full">
+        <div class="min-w-[10rem]">
+          <!-- head -->
           <a
             href="#"
-            class="dropdown-btn w-full flex flex-row-reverse items-center justify-between"
+            class="dropdown-btn w-full flex flex-row-reverse items-center justify-around gap-8"
           >
             <p>مشاوره رایگان</p>
             <svg
-              class="w-4 h-4 mr-6"
+              class="w-3 h-3 mr-6"
               viewBox="0 0 14 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                fill="white"
+                fill="#002a54"
               />
               <path
                 d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                fill="white"
+                fill="#002a54"
               />
             </svg>
           </a>
+          <!-- Sub -->
           <div
-            class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center"
           >
-            <p class="w-4/5"></p>
+            <div
+              class="flex flex-col items-center justify-center min-w-[13rem] gap-3 bg-white shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#002a54] rounded-md border"
+            >
+              <!-- Sub1 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test1</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test1-1</a>
+                </div>
+              </div>
+              <!-- Sub2 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test2</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test2-1</a>
+
+                  <div class=" w-full">
+                    <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                      <p>Test2-2</p>
+                    <svg
+                      class="w-3 h-3"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                        fill="#002a54"
+                      />
+                      <path
+                        d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                        fill="#002a54"
+                      />
+                    </svg>
+                    </a>
+                    <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                      <a href="">Test2-2-1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub3 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test3</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test3-1</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- چندرسانه‌ای -->
-        <div class="w-full">
+        <!-- چندرسانه‌ای-->
+        <div class="min-w-[10rem]">
+          <!-- head -->
           <a
             href="#"
-            class="dropdown-btn w-full flex flex-row-reverse items-center justify-between"
+            class="dropdown-btn w-full flex flex-row-reverse items-center justify-around gap-8"
           >
             <p>چندرسانه‌ای</p>
             <svg
-              class="w-4 h-4 mr-6"
+              class="w-3 h-3 mr-6"
               viewBox="0 0 14 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                fill="white"
+                fill="#002a54"
               />
               <path
                 d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                fill="white"
+                fill="#002a54"
               />
             </svg>
           </a>
+          <!-- Sub -->
           <div
-            class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center"
           >
-            <p class="w-4/5"></p>
+            <div
+              class="flex flex-col items-center justify-center min-w-[13rem] gap-3 bg-white shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#002a54] rounded-md border"
+            >
+              <!-- Sub1 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test1</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test1-1</a>
+                </div>
+              </div>
+              <!-- Sub2 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test2</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test2-1</a>
+
+                  <div class=" w-full">
+                    <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                      <p>Test2-2</p>
+                    <svg
+                      class="w-3 h-3"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                        fill="#002a54"
+                      />
+                      <path
+                        d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                        fill="#002a54"
+                      />
+                    </svg>
+                    </a>
+                    <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                      <a href="">Test2-2-1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub3 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test3</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test3-1</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- ارتباط با ما -->
-        <div class="w-full">
+        <!-- ارتباط با ما-->
+        <div class="min-w-[10rem]">
+          <!-- head -->
           <a
             href="#"
-            class="dropdown-btn w-full flex flex-row-reverse items-center justify-between"
+            class="dropdown-btn w-full flex flex-row-reverse items-center justify-around gap-8"
           >
             <p>ارتباط با ما</p>
             <svg
-              class="w-4 h-4 mr-6"
+              class="w-3 h-3 mr-6"
               viewBox="0 0 14 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
-                fill="white"
+                fill="#002a54"
               />
               <path
                 d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
-                fill="white"
+                fill="#002a54"
               />
             </svg>
           </a>
+          <!-- Sub -->
           <div
-            class="dropdown-container text-sm text-justify text-[#003366] justify-center"
+            class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center"
           >
-            <p class="w-4/5"></p>
+            <div
+              class="flex flex-col items-center justify-center min-w-[13rem] gap-3 bg-white shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#002a54] rounded-md border"
+            >
+              <!-- Sub1 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test1</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test1-1</a>
+                </div>
+              </div>
+              <!-- Sub2 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test2</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test2-1</a>
+
+                  <div class=" w-full">
+                    <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                      <p>Test2-2</p>
+                    <svg
+                      class="w-3 h-3"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                        fill="#002a54"
+                      />
+                      <path
+                        d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                        fill="#002a54"
+                      />
+                    </svg>
+                    </a>
+                    <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                      <a href="">Test2-2-1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sub3 -->
+              <div class=" w-full">
+                <a class="dropdown-btn flex flex-row-reverse justify-center items-center gap-4" href="#">
+                  <p>Test3</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#002a54"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#002a54"
+                  />
+                </svg>
+                </a>
+                <div class="dropdown-container w-full text-sm text-justify justify-center flex-col gap-4 items-center p-2 bg-[#F5F5F5]">
+                  <a href="">Test3-1</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
 
         <!-- رزرو نوبت از مطب -->
         <div class="w-full flex justify-center">
           <a
             href="#"
-            class="flex flex-row-reverse items-center justify-between gap-4 bg-[#D90429] w-4/5 rounded-lg btnhover"
+            class="flex flex-row-reverse items-center justify-around gap-4 bg-[#D90429] r400:w-4/5 rounded-lg btnhover px-6"
           >
-            <p class="text-base my-2">رزرو نوبت از مطب</p>
+            <p class="text-sm md:text-base my-2">رزرو نوبت از مطب</p>
             <div
               class="w-7 h-7 bg-white rounded-full shadow-[inset_0px_2px_5px_0px_#0000004D] text-[#002A54] flex justify-center items-center text-3xl font-medium my-2"
             >
@@ -674,8 +2234,6 @@
           </a>
         </div>
       </div>
-
-      <div id="mySidenav2" class="sidenav bg-[#01162a] opacity-70 z-50"></div>
     </section>
 
     <!-- SlideShow -->
@@ -1049,7 +2607,7 @@
     >
       <div class="relative w-full md:w-1/2">
         <img
-          class="rounded-lg shadow-2xl w-full xl:w-[630px] xl:h-[550px]"
+          class="rounded-lg shadow-2xl w-full xl:w-[630px] xl:h-[550px] object-cover"
           src="./images/hossein.png"
           alt="hossein"
         />
@@ -1290,21 +2848,129 @@
           class="w-full sm:h-[450px] lg:h-[600px] h-auto flex sm:flex-row gap-2 flex-col"
         >
           <div class="sm:w-1/2 h-full flex flex-col gap-2 w-full">
-            <div class="w-full h-3/4 relative" id="g1"></div>
+            <div class="w-full h-3/4 relative gallery" id="g1">
+              <img
+                class="w-full h-full rounded-lg object-cover"
+                src="./images/img/img-1.png"
+                alt="pretty kitty"
+              />
+              <div class="hidden">
+                <div
+                  class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
+                >
+                  <div
+                    class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                  >
+                    <img
+                      class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                      src="./images/Icons.png"
+                      alt="icons"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                >
+                  <p class="mb-4 r300:mb-1">
+                    برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                  </p>
+                </div>
+              </div>
+            </div>
             <div class="w-full h-1/4 flex flex-row gap-2">
-              <div class="w-1/2 h-full" id="g2"></div>
-              <div class="w-1/2 h-full" id="g3"></div>
+              <div class="w-1/2 h-full gallery" id="g2">
+                <img
+                  class="w-full h-full rounded-lg object-cover"
+                  src="./images/img/img-2.png"
+                  alt="pretty kitty"
+                />
+                <div class="hidden">
+                  <div
+                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
+                  >
+                    <div
+                      class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                    >
+                      <img
+                        class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                        src="./images/Icons.png"
+                        alt="icons"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                  >
+                    <p class="mb-4 r300:mb-1">
+                      برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-1/2 h-full gallery" id="g3">
+                <img
+                  class="w-full h-full rounded-lg object-cover"
+                  src="./images/img/img-3.png"
+                  alt="pretty kitty"
+                />
+                <div class="hidden">
+                  <div
+                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
+                  >
+                    <div
+                      class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                    >
+                      <img
+                        class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                        src="./images/Icons.png"
+                        alt="icons"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                  >
+                    <p class="mb-4 r300:mb-1">
+                      برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="sm:w-1/2 h-full flex flex-col gap-2 sm:gap-3 w-full">
             <div class="w-full h-3/4 flex flex-col gap-2">
-              <div class="w-full h-3/5" id="g4"></div>
+              <div class="w-full h-3/5" id="g4">
+                <img
+                  class="w-full h-full rounded-lg object-cover"
+                  src="./images/img/img-4.png"
+                  alt="pretty kitty"
+                />
+              </div>
               <div class="w-full h-2/5 flex flex-row gap-2">
-                <div class="w-1/2 h-full" id="g5"></div>
-                <div class="w-1/2 h-full" id="g6"></div>
+                <div class="w-1/2 h-full" id="g5">
+                  <img
+                    class="w-full h-full rounded-lg object-cover"
+                    src="./images/img/img-5.png"
+                    alt="pretty kitty"
+                  />
+                </div>
+                <div class="w-1/2 h-full" id="g6">
+                  <img
+                    class="w-full h-full rounded-lg object-cover"
+                    src="./images/img/img-6.png"
+                    alt="pretty kitty"
+                  />
+                </div>
               </div>
             </div>
-            <div class="w-full h-1/4" id="g7"></div>
+            <div class="w-full h-1/4" id="g7">
+              <img
+                class="w-full h-full rounded-lg object-cover"
+                src="./images/img/img-7.png"
+                alt="pretty kitty"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1325,7 +2991,7 @@
         class="relative w-full flex flex-col items-center gap-6 px-8 pb-8 r400:px-3 sm:px-12 md:px-0 lg:px-20 xl:px-44"
       >
         <img
-          class="h-full absolute top-0 z-10 hidden sm:block"
+          class="h-full absolute top-0 z-10 hidden sm:block object-cover"
           src="./images/hospital.png"
           alt=""
         />
@@ -1352,7 +3018,7 @@
         </div>
         <!-- Service Box -->
         <div
-          class="w-full z-40 flex flex-col items-center justify-center gap-3 md:flex-row md:flex-wrap"
+          class="w-full z-40 flex flex-col items-center justify-center gap-3 md:flex-row md:flex-wrap xl:gap-8"
         >
           <!-- Service-1 -->
           <div
@@ -1454,13 +3120,13 @@
         id="mySwiper"
       >
         <!-- swiper-wrapper -->
-        <div class="swiper-wrapper w-full rounded-t-lg">
+        <div class="swiper-wrapper w-full rounded-t-lg z-30">
           <!-- swiper-1 -->
           <div
             class="swiper-slide w-full sm:h-full rounded-t-lg flex flex-col gap-4 pb-1"
           >
             <img
-              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg"
+              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg object-cover"
               src="./images/SEI_137431487 1.png"
               alt="swiper"
             />
@@ -1490,7 +3156,7 @@
             class="swiper-slide w-full sm:h-full rounded-t-lg flex flex-col gap-4 pb-1"
           >
             <img
-              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg"
+              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg object-cover"
               src="./images/SEI_2.png"
               alt="swiper"
             />
@@ -1521,7 +3187,7 @@
             class="swiper-slide w-full sm:h-full rounded-t-lg flex flex-col gap-4 pb-1"
           >
             <img
-              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg"
+              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg object-cover"
               src="./images/SEI_3.png"
               alt="swiper"
             />
@@ -1552,7 +3218,7 @@
             class="swiper-slide w-full sm:h-full rounded-t-lg flex flex-col gap-4 pb-1"
           >
             <img
-              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg"
+              class="w-full h-3/5 sm:h-2/5 md:h-3/5 rounded-t-lg object-cover"
               src="./images/SEI_3.png"
               alt="swiper"
             />
@@ -1584,7 +3250,16 @@
         <div
           class="w-full py-4 px-4 flex flex-row items-center border-t border-solid border-[#0000001A] mt-4"
         >
-          <div id="swiper-pagination" class="stroke-red-600"></div>
+          <div
+            class="2xl:flex hidden relative top-0 w-full h-full flex-row justify-between"
+          >
+            <div class="swiper-button-next z-30"></div>
+            <div class="swiper-button-prev z-30"></div>
+          </div>
+          <div
+            id="swiper-pagination"
+            class="2xl:flex justify-center 2xl:absolute w-full h-full items-end pb-4 z-20"
+          ></div>
           <div class="autoplay-progress">
             <svg id="progressCircle" viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="20"></circle>
@@ -1612,7 +3287,7 @@
     >
       <div class="w-full h-1/2 lg:w-1/2 lg:h-full relative">
         <img
-          class="absolute top-0 z-10 w-full h-full"
+          class="absolute top-0 z-10 w-full h-full object-cover"
           src="./images/hospital_0.png"
           alt="hospital"
         />
@@ -1764,7 +3439,7 @@
         class="h-full w-full absolute top-0 flex items-center justify-center rounded-xl"
       >
         <img
-          class="z-40 w-64 h-80 lg:w-48 lg:h-56 rounded-xl r400:w-11/12 r400:h-72 xl:w-[360px] xl:h-[480px]"
+          class="z-40 w-64 h-80 lg:w-48 lg:h-56 rounded-xl r400:w-11/12 r400:h-72 xl:w-[360px] xl:h-[480px] object-cover"
           src="./images/1400032321390029322972444 2.png"
           alt="hossein"
         />
@@ -1774,214 +3449,195 @@
     <!-- Footer -->
     <footer class="bg-[#002A54] w-full py-10">
       <div
-        class="w-3/5 r400:w-10/12 mr-8 r400:mr-4 flex flex-col lg:flex-row lg:flex-wrap lg:gap-28 gap-8 lg:px-20 lg:w-full"
+        class="w-3/5 r400:w-10/12 r400:mr-4 flex flex-col gap-8 lg:px-20 lg:w-full"
       >
-        <div class="flex flex-col gap-8 lg:w-72">
-          <div class="flex flex-row items-center gap-4">
-            <img class="w-14 h-14" src="./images/Group2.png" alt="Group" />
-            <span>
-              <p class="text-[#FF375F] text-sm font-medium lg:text-lg">
-                پروفسور
-              </p>
-              <p
-                class="text-[#DCDCDC] text-xl r400:text-lg font-extrabold mt-1 lg:text-2xl"
-              >
-                دکتر حسین قناعتی
-              </p>
-            </span>
-          </div>
-          <p class="text-[#C8C8C8] text-xs text-justify leading-7 lg:text-base">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-          </p>
-        </div>
-
-        <div class="flex flex-col gap-8 lg:w-72">
-          <div class="flex flex-col gap-1">
-            <p class="text-base font-bold text-white lg:text-lg">
-              اطلاعات تماس
-            </p>
-            <div class="w-10 h-[2px] bg-[#FF375F]"></div>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 10 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.30542 2.49038C8.42283 0.96725 6.85516 0.0367119 5.11188 0.00115035C5.03746 -0.000383452 4.96256 -0.000383452 4.88811 0.00115035C3.14486 0.0367119 1.57719 0.96725 0.694571 2.49038C-0.207592 4.04725 -0.232275 5.91735 0.628532 7.49294L4.23477 14.0936C4.23639 14.0965 4.23801 14.0995 4.23968 14.1024C4.39835 14.3781 4.68258 14.5428 5.00005 14.5428C5.31749 14.5428 5.60173 14.3781 5.76037 14.1024C5.76204 14.0995 5.76366 14.0965 5.76528 14.0936L9.37152 7.49294C10.2323 5.91735 10.2076 4.04725 9.30542 2.49038ZM5 6.5897C3.87234 6.5897 2.95492 5.67229 2.95492 4.54463C2.95492 3.41697 3.87234 2.49955 5 2.49955C6.12766 2.49955 7.04507 3.41697 7.04507 4.54463C7.04507 5.67229 6.12769 6.5897 5 6.5897Z"
-                  fill="#FF375F"
-                />
-              </svg>
-
-              <p
-                class="mr-6 text-[#C8C8C8] text-xs leading-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                تهران میدان فاطمی ابتدای خیابان جویبار کوچه میرهادی غربی پلاک 27
-              </p>
+        <div class="flex flex-col gap-8 lg:flex-row lg:flex-wrap lg:gap-28">
+          <div class="flex flex-col gap-8 lg:w-72">
+            <div class="flex flex-row items-center gap-4">
+              <img class="w-14 h-14" src="./images/Group2.png" alt="Group" />
+              <span>
+                <p class="text-[#FF375F] text-sm font-medium lg:text-lg">
+                  پروفسور
+                </p>
+                <p
+                  class="text-[#DCDCDC] text-xl r400:text-lg font-extrabold mt-1 lg:text-2xl"
+                >
+                  دکتر حسین قناعتی
+                </p>
+              </span>
             </div>
-
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 10 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.73777 7.35443L8.33931 5.95597C7.83986 5.45652 6.99079 5.65632 6.79101 6.30559C6.64117 6.75511 6.14172 7.00484 5.69221 6.90493C4.69331 6.6552 3.34478 5.35663 3.09506 4.30778C2.94522 3.85825 3.24489 3.3588 3.6944 3.20898C4.34369 3.0092 4.54347 2.16013 4.04402 1.66068L2.64555 0.262212C2.24599 -0.0874042 1.64665 -0.0874042 1.29703 0.262212L0.348072 1.21117C-0.600887 2.21008 0.447962 4.85717 2.79539 7.2046C5.14281 9.55203 7.78991 10.6508 8.78881 9.65192L9.73777 8.70296C10.0874 8.30339 10.0874 7.70405 9.73777 7.35443Z"
-                  fill="#FF375F"
-                />
-              </svg>
-
-              <p
-                class="mr-6 text-[#C8C8C8] text-xs hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                ۸۸۵۶۳۶۳۲ (۰۲۱)
-              </p>
-            </div>
-
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 10 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.959803 2.49316C1.0863 2.58242 1.46762 2.84754 2.10376 3.28837C2.73993 3.7292 3.22728 4.06862 3.56583 4.30667C3.60302 4.33276 3.68204 4.38948 3.80293 4.47691C3.92384 4.5644 4.02431 4.63509 4.10425 4.68902C4.18425 4.74292 4.28096 4.8034 4.39448 4.87034C4.50796 4.93723 4.61493 4.98754 4.71538 5.02084C4.81584 5.05442 4.90884 5.07105 4.99439 5.07105H5H5.00563C5.09118 5.07105 5.18422 5.0544 5.28468 5.02084C5.38509 4.98754 5.49216 4.93717 5.60554 4.87034C5.71898 4.80332 5.81569 4.7429 5.89569 4.68902C5.97569 4.63509 6.07608 4.5644 6.19703 4.47691C6.3179 4.3894 6.39702 4.33276 6.43421 4.30667C6.77641 4.06862 7.64703 3.46406 9.04579 2.49304C9.31735 2.30339 9.54424 2.07455 9.7265 1.80668C9.9089 1.53892 10 1.25803 10 0.964168C10 0.718598 9.9116 0.508386 9.73486 0.333551C9.55815 0.158677 9.34886 0.0712891 9.10712 0.0712891H0.89282C0.60638 0.0712891 0.385946 0.168 0.231556 0.361423C0.0771853 0.554885 0 0.796702 0 1.08686C0 1.32123 0.10234 1.5752 0.306923 1.84862C0.511487 2.12206 0.729185 2.33693 0.959803 2.49316Z"
-                  fill="#FF375F"
-                />
-                <path
-                  d="M9.4419 3.08996C8.22179 3.91578 7.29533 4.55758 6.66297 5.01522C6.45092 5.17141 6.2789 5.29333 6.14679 5.3807C6.01469 5.46813 5.83899 5.55741 5.61946 5.64851C5.4 5.73975 5.19547 5.78523 5.00571 5.78523H5.00002H4.99441C4.80468 5.78523 4.60004 5.73975 4.38058 5.64851C4.16113 5.55741 3.98531 5.46813 3.85324 5.3807C3.72121 5.29333 3.54914 5.17141 3.33711 5.01522C2.83484 4.64694 1.91038 4.00511 0.563673 3.08996C0.351565 2.94869 0.163694 2.78675 0 2.60449V7.03517C0 7.28086 0.0873881 7.49095 0.262262 7.66581C0.437097 7.84072 0.647328 7.92815 0.892879 7.92815H9.1072C9.35269 7.92815 9.5629 7.84072 9.73776 7.66581C9.91267 7.49089 10 7.28088 10 7.03517V2.60449C9.84002 2.78298 9.65406 2.94492 9.4419 3.08996Z"
-                  fill="#FF375F"
-                />
-              </svg>
-
-              <p
-                class="mr-6 text-[#C8C8C8] text-xs hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                info@tums.com
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-8">
-          <div class="flex flex-col gap-1">
-            <p class="text-base font-bold text-white lg:text-lg">
-              پیوندهای مفید
-            </p>
-            <div class="w-10 h-[2px] bg-[#FF375F]"></div>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 6 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
-                  fill="#C8C8C8"
-                />
-              </svg>
-              <p
-                class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                درباره ما
-              </p>
-            </div>
-
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 6 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
-                  fill="#C8C8C8"
-                />
-              </svg>
-              <p
-                class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                خدمات ما
-              </p>
-            </div>
-
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 6 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
-                  fill="#C8C8C8"
-                />
-              </svg>
-              <p
-                class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                سوالات متداول
-              </p>
-            </div>
-
-            <div class="flex flex-row">
-              <svg
-                class="w-3 h-3 lg:w-4 lg:h-4 absolute"
-                viewBox="0 0 6 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
-                  fill="#C8C8C8"
-                />
-              </svg>
-              <p
-                class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
-              >
-                مشاوره آنلاین
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-8">
-          <div class="flex flex-col gap-1">
-            <p class="text-base font-bold text-white lg:text-lg">
-              عضویت در خبرنامه
-            </p>
-            <div class="w-10 h-[2px] bg-[#FF375F]"></div>
-          </div>
-
-          <form class="flex flex-col gap-3" action="#">
-            <input
-              class="w-full h-10 text-xs bg-inherit border border-solid border-[#C8C8C8] text-[#C8C8C8] rounded-lg px-4 focus:outline-none focus:border-2 focus:border-[#FF375F] focus:shadow-[0_0px_70px_10px_#FF375F] lg:w-72 lg:h-14 lg:text-sm"
-              type="text"
-              required
-              placeholder="ایمیل خود را درج نمایید"
-            />
-
-            <button
-              class="w-full h-10 text-sm font-bold text-white bg-[#FF375F] text-center rounded-lg lg:w-72 lg:h-14 lg:text-base"
+            <p
+              class="text-[#C8C8C8] text-xs text-justify leading-7 lg:text-base"
             >
-              ارسال ایمیل جهت عضویت
-            </button>
-          </form>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+              نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-8 lg:w-72">
+            <div class="flex flex-col gap-1">
+              <p class="text-base font-bold text-white lg:text-lg">
+                اطلاعات تماس
+              </p>
+              <div class="w-10 h-[2px] bg-[#FF375F]"></div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 10 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.30542 2.49038C8.42283 0.96725 6.85516 0.0367119 5.11188 0.00115035C5.03746 -0.000383452 4.96256 -0.000383452 4.88811 0.00115035C3.14486 0.0367119 1.57719 0.96725 0.694571 2.49038C-0.207592 4.04725 -0.232275 5.91735 0.628532 7.49294L4.23477 14.0936C4.23639 14.0965 4.23801 14.0995 4.23968 14.1024C4.39835 14.3781 4.68258 14.5428 5.00005 14.5428C5.31749 14.5428 5.60173 14.3781 5.76037 14.1024C5.76204 14.0995 5.76366 14.0965 5.76528 14.0936L9.37152 7.49294C10.2323 5.91735 10.2076 4.04725 9.30542 2.49038ZM5 6.5897C3.87234 6.5897 2.95492 5.67229 2.95492 4.54463C2.95492 3.41697 3.87234 2.49955 5 2.49955C6.12766 2.49955 7.04507 3.41697 7.04507 4.54463C7.04507 5.67229 6.12769 6.5897 5 6.5897Z"
+                    fill="#FF375F"
+                  />
+                </svg>
+
+                <p
+                  class="mr-6 text-[#C8C8C8] text-xs leading-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  تهران میدان فاطمی ابتدای خیابان جویبار کوچه میرهادی غربی پلاک
+                  27
+                </p>
+              </div>
+
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 10 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.73777 7.35443L8.33931 5.95597C7.83986 5.45652 6.99079 5.65632 6.79101 6.30559C6.64117 6.75511 6.14172 7.00484 5.69221 6.90493C4.69331 6.6552 3.34478 5.35663 3.09506 4.30778C2.94522 3.85825 3.24489 3.3588 3.6944 3.20898C4.34369 3.0092 4.54347 2.16013 4.04402 1.66068L2.64555 0.262212C2.24599 -0.0874042 1.64665 -0.0874042 1.29703 0.262212L0.348072 1.21117C-0.600887 2.21008 0.447962 4.85717 2.79539 7.2046C5.14281 9.55203 7.78991 10.6508 8.78881 9.65192L9.73777 8.70296C10.0874 8.30339 10.0874 7.70405 9.73777 7.35443Z"
+                    fill="#FF375F"
+                  />
+                </svg>
+
+                <p
+                  class="mr-6 text-[#C8C8C8] text-xs hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  ۸۸۵۶۳۶۳۲ (۰۲۱)
+                </p>
+              </div>
+
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 10 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.959803 2.49316C1.0863 2.58242 1.46762 2.84754 2.10376 3.28837C2.73993 3.7292 3.22728 4.06862 3.56583 4.30667C3.60302 4.33276 3.68204 4.38948 3.80293 4.47691C3.92384 4.5644 4.02431 4.63509 4.10425 4.68902C4.18425 4.74292 4.28096 4.8034 4.39448 4.87034C4.50796 4.93723 4.61493 4.98754 4.71538 5.02084C4.81584 5.05442 4.90884 5.07105 4.99439 5.07105H5H5.00563C5.09118 5.07105 5.18422 5.0544 5.28468 5.02084C5.38509 4.98754 5.49216 4.93717 5.60554 4.87034C5.71898 4.80332 5.81569 4.7429 5.89569 4.68902C5.97569 4.63509 6.07608 4.5644 6.19703 4.47691C6.3179 4.3894 6.39702 4.33276 6.43421 4.30667C6.77641 4.06862 7.64703 3.46406 9.04579 2.49304C9.31735 2.30339 9.54424 2.07455 9.7265 1.80668C9.9089 1.53892 10 1.25803 10 0.964168C10 0.718598 9.9116 0.508386 9.73486 0.333551C9.55815 0.158677 9.34886 0.0712891 9.10712 0.0712891H0.89282C0.60638 0.0712891 0.385946 0.168 0.231556 0.361423C0.0771853 0.554885 0 0.796702 0 1.08686C0 1.32123 0.10234 1.5752 0.306923 1.84862C0.511487 2.12206 0.729185 2.33693 0.959803 2.49316Z"
+                    fill="#FF375F"
+                  />
+                  <path
+                    d="M9.4419 3.08996C8.22179 3.91578 7.29533 4.55758 6.66297 5.01522C6.45092 5.17141 6.2789 5.29333 6.14679 5.3807C6.01469 5.46813 5.83899 5.55741 5.61946 5.64851C5.4 5.73975 5.19547 5.78523 5.00571 5.78523H5.00002H4.99441C4.80468 5.78523 4.60004 5.73975 4.38058 5.64851C4.16113 5.55741 3.98531 5.46813 3.85324 5.3807C3.72121 5.29333 3.54914 5.17141 3.33711 5.01522C2.83484 4.64694 1.91038 4.00511 0.563673 3.08996C0.351565 2.94869 0.163694 2.78675 0 2.60449V7.03517C0 7.28086 0.0873881 7.49095 0.262262 7.66581C0.437097 7.84072 0.647328 7.92815 0.892879 7.92815H9.1072C9.35269 7.92815 9.5629 7.84072 9.73776 7.66581C9.91267 7.49089 10 7.28088 10 7.03517V2.60449C9.84002 2.78298 9.65406 2.94492 9.4419 3.08996Z"
+                    fill="#FF375F"
+                  />
+                </svg>
+
+                <p
+                  class="mr-6 text-[#C8C8C8] text-xs hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  info@tums.com
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-1">
+              <p class="text-base font-bold text-white lg:text-lg">
+                پیوندهای مفید
+              </p>
+              <div class="w-10 h-[2px] bg-[#FF375F]"></div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
+                    fill="#C8C8C8"
+                  />
+                </svg>
+                <p
+                  class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  درباره ما
+                </p>
+              </div>
+
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
+                    fill="#C8C8C8"
+                  />
+                </svg>
+                <p
+                  class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  خدمات ما
+                </p>
+              </div>
+
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
+                    fill="#C8C8C8"
+                  />
+                </svg>
+                <p
+                  class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  سوالات متداول
+                </p>
+              </div>
+
+              <div class="flex flex-row">
+                <svg
+                  class="w-3 h-3 lg:w-4 lg:h-4 absolute"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.23545 5.50231L5.581 1.15676C5.73123 1.0065 5.73123 0.762908 5.581 0.612656C5.43073 0.462448 5.18715 0.462448 5.0369 0.612656L0.419296 5.23026C0.269089 5.38051 0.269089 5.62411 0.419296 5.77436L5.0369 10.392C5.18977 10.5396 5.43337 10.5354 5.581 10.3825C5.72501 10.2334 5.72501 9.99697 5.581 9.84787L1.23545 5.50231Z"
+                    fill="#C8C8C8"
+                  />
+                </svg>
+                <p
+                  class="text-[#C8C8C8] text-xs mr-6 hover:transition-all hover:duration-700 hover:text-[#FF375F] cursor-pointer lg:text-sm"
+                >
+                  مشاوره آنلاین
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div
@@ -2113,6 +3769,10 @@
         pagination: {
           el: swiperPagination,
           clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         autoplay: {
           delay: 9500,
