@@ -243,3 +243,31 @@ body{
 #g1:hover > div , #g2:hover > div {
   display: block
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  object-fit: cover;
+}
+#mySwiper2 [class^="swiper-button-"]::after{
+  content: "";
+}
+
+@media only screen and (max-width: 400px) {
+  #mySwiper2 .next , #mySwiper2 .prev{
+    top: 94%;
+  }
+}
