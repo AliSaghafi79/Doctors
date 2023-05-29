@@ -14,6 +14,9 @@
         margin: 0;
         font-family: "Vazirmatn", sans-serif;
       }
+      *:focus {
+        outline: none !important;
+      }
       ::-webkit-scrollbar {
         width: 10px;
       }
@@ -2365,9 +2368,11 @@
         <div class="w-full flex justify-center">
           <a
             href="#"
-            class="flex flex-row-reverse items-center justify-around gap-4 bg-[#D90429] r400:w-4/5 rounded-lg btnhover px-6"
+            class="flex flex-row-reverse items-center justify-around gap-4 bg-[#D90429] r400:w-4/5 rounded-lg btnhover px-6 group hover:transition-all hover:duration-700 hover:bg-white hover:border-2 hover:border-solid hover:border-[#d90429]"
           >
-            <p class="text-sm md:text-base my-2">رزرو نوبت از مطب</p>
+            <p class="text-sm md:text-base my-2 group-hover:text-[#d90429]">
+              رزرو نوبت از مطب
+            </p>
             <div
               class="w-7 h-7 bg-white rounded-full shadow-[inset_0px_2px_5px_0px_#0000004D] text-[#002A54] flex justify-center items-center text-3xl font-medium my-2"
             >
@@ -3123,18 +3128,21 @@
           class="w-full sm:h-[450px] lg:h-[600px] h-auto flex sm:flex-row gap-2 flex-col"
         >
           <div class="sm:w-1/2 h-full flex flex-col gap-2 w-full">
-            <div class="w-full h-3/4 relative gallery" id="g1">
+            <!-- g1 -->
+            <div class="w-full h-3/4 relative gallery group rounded-lg">
               <img
                 class="w-full h-full rounded-lg object-cover"
                 src="./images/img/img-1.png"
                 alt="pretty kitty"
               />
-              <div class="hidden">
+              <!-- Hover g1 -->
+              <div class="hidden group-hover:block">
                 <div
                   class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
                 >
                   <div
                     class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                    onclick="document.getElementById('myModal1').showModal()"
                   >
                     <img
                       class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
@@ -3153,21 +3161,23 @@
               </div>
             </div>
             <div class="w-full h-1/4 flex flex-row gap-2">
-              <div class="w-1/2 h-full gallery" id="g2">
+              <!-- g2 -->
+              <div class="w-1/2 h-full gallery relative group rounded-lg">
                 <img
                   class="w-full h-full rounded-lg object-cover"
                   src="./images/img/img-2.png"
                   alt="pretty kitty"
                 />
-                <div class="hidden">
+                <div class="hidden group-hover:block">
                   <div
-                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
+                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-start pt-8 rounded-lg"
                   >
                     <div
-                      class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                      class="w-12 h-12 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                      onclick="document.getElementById('myModal2').showModal()"
                     >
                       <img
-                        class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                        class="w-6 h-6 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
                         src="./images/Icons.png"
                         alt="icons"
                       />
@@ -3176,27 +3186,29 @@
                   <div
                     class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
                   >
-                    <p class="mb-4 r300:mb-1">
+                    <p class="mb-4 r300:mb-1 hidden lg:block">
                       برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="w-1/2 h-full gallery" id="g3">
+              <!-- g3 -->
+              <div class="w-1/2 h-full gallery relative group rounded-lg">
                 <img
                   class="w-full h-full rounded-lg object-cover"
                   src="./images/img/img-3.png"
                   alt="pretty kitty"
                 />
-                <div class="hidden">
+                <div class="hidden group-hover:block">
                   <div
-                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
+                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-start pt-8 rounded-lg"
                   >
                     <div
-                      class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                      class="w-12 h-12 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                      onclick="document.getElementById('myModal3').showModal()"
                     >
                       <img
-                        class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                        class="w-6 h-6 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
                         src="./images/Icons.png"
                         alt="icons"
                       />
@@ -3205,7 +3217,7 @@
                   <div
                     class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
                   >
-                    <p class="mb-4 r300:mb-1">
+                    <p class="mb-4 r300:mb-1 hidden lg:block">
                       برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
                     </p>
                   </div>
@@ -3215,36 +3227,132 @@
           </div>
           <div class="sm:w-1/2 h-full flex flex-col gap-2 sm:gap-3 w-full">
             <div class="w-full h-3/4 flex flex-col gap-2">
-              <div class="w-full h-3/5" id="g4">
+              <!-- g4 -->
+              <div class="w-full h-3/5 gallery relative group rounded-lg">
                 <img
                   class="w-full h-full rounded-lg object-cover"
                   src="./images/img/img-4.png"
                   alt="pretty kitty"
                 />
+                <div class="hidden group-hover:block">
+                  <div
+                    class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-center rounded-lg"
+                  >
+                    <div
+                      class="w-16 h-16 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                      onclick="document.getElementById('myModal4').showModal()"
+                    >
+                      <img
+                        class="w-8 h-8 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                        src="./images/Icons.png"
+                        alt="icons"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                  >
+                    <p class="mb-4 r300:mb-1">
+                      برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                    </p>
+                  </div>
+                </div>
               </div>
               <div class="w-full h-2/5 flex flex-row gap-2">
-                <div class="w-1/2 h-full" id="g5">
+                <!-- g5 -->
+                <div class="w-1/2 h-full gallery relative group rounded-lg">
                   <img
                     class="w-full h-full rounded-lg object-cover"
                     src="./images/img/img-5.png"
                     alt="pretty kitty"
                   />
+                  <div class="hidden group-hover:block">
+                    <div
+                      class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-start pt-10 rounded-lg"
+                    >
+                      <div
+                        class="w-12 h-12 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                        onclick="document.getElementById('myModal5').showModal()"
+                      >
+                        <img
+                          class="w-6 h-6 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                          src="./images/Icons.png"
+                          alt="icons"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                    >
+                      <p class="mb-4 r300:mb-1 sm:hidden lg:block">
+                        برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="w-1/2 h-full" id="g6">
+                <!-- g6 -->
+                <div class="w-1/2 h-full gallery relative group rounded-lg">
                   <img
                     class="w-full h-full rounded-lg object-cover"
                     src="./images/img/img-6.png"
                     alt="pretty kitty"
                   />
+                  <div class="hidden group-hover:block">
+                    <div
+                      class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-start pt-10 rounded-lg"
+                    >
+                      <div
+                        class="w-12 h-12 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                        onclick="document.getElementById('myModal6').showModal()"
+                      >
+                        <img
+                          class="w-6 h-6 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                          src="./images/Icons.png"
+                          alt="icons"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                    >
+                      <p class="mb-4 r300:mb-1 sm:hidden lg:block">
+                        برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="w-full h-1/4" id="g7">
+            <!-- g7 -->
+            <div class="w-full h-1/4 gallery relative group rounded-lg">
               <img
                 class="w-full h-full rounded-lg object-cover"
                 src="./images/img/img-7.png"
                 alt="pretty kitty"
               />
+              <div class="hidden group-hover:block">
+                <div
+                  class="w-full h-full absolute top-0 gallery flex flex-col items-center justify-start pt-12 rounded-lg"
+                >
+                  <div
+                    class="w-12 h-12 bg-[#00000080] rounded-full border-2 border-solid border-white shadow-[0px_5px_10px_0px_#0000004D] flex justify-center items-center cursor-pointer z-40 r400:w-12 r400:h-12 r300:w-9 r300:h-9"
+                    onclick="document.getElementById('myModal7').showModal()"
+                  >
+                    <img
+                      class="w-6 h-6 r400:w-5 r400:h-5 r300:w-4 r300:h-4"
+                      src="./images/Icons.png"
+                      alt="icons"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="w-full h-full absolute top-0 flex items-end text-[10px] text-white font-bold px-4 z-20 rounded-lg leading-4 r400:text-[8px] r300:text-[6px]"
+                >
+                  <p class="mb-4 r300:mb-1 sm:hidden lg:block">
+                    برگزاری کارگاه استادان همیار در دانشگاه علوم پزشکی تهران
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3258,12 +3366,320 @@
           <p>آرشیو گالری تصاویر</p>
         </button>
       </div>
+      <!--Size g1 -->
+      <dialog
+        id="myModal1"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-clip pb-10"
+      >
+        <div class="flex flex-col justify-center items-center w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal1').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#ff375f"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center text-center rounded-lg"
+          >
+            <img
+              class="w-full h-full rounded-lg"
+              src="./images/img/img-1.png"
+              alt=""
+            />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g2 -->
+      <dialog
+        id="myModal2"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-auto overflow-x-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal2').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./images/img/img-2.png"
+              alt=""
+            />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g3 -->
+      <dialog
+        id="myModal3"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal3').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/img/img-3.png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g4 -->
+      <dialog
+        id="myModal4"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal4').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/img/img-4.png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g5 -->
+      <dialog
+        id="myModal5"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal5').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/img/img-5.png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g6 -->
+      <dialog
+        id="myModal6"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal6').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/img/img-6.png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g7 -->
+      <dialog
+        id="myModal7"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal7').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./images/img/img-7.png"
+              alt=""
+            />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
     </section>
+
     <!-- Gallery Style -->
     <style>
-      #g1:hover > div,
-      #g2:hover > div {
-        display: block;
+      dialog[open] {
+        animation: appear 0.15s cubic-bezier(0, 1.8, 1, 1.8);
+      }
+
+      dialog::backdrop {
+        background: linear-gradient(45deg, #00000080, rgba(54, 54, 54, 0.5));
+        backdrop-filter: blur(3px);
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateX(-3rem);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
       .gallery {
         background: linear-gradient(
